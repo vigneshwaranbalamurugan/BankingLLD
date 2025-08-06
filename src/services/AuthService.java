@@ -16,8 +16,8 @@ public class AuthService implements IAuthService {
 
     @Override
     public boolean loginAsAdmin(String username, String password) {
-        return admin.getAdminUsername().equals(username) &&
-                admin.getAdminPassword().equals(password);
+        return admin.getUserName().equals(username) &&
+                admin.getPassword().equals(password);
     }
 
     @Override

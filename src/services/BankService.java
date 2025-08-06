@@ -55,6 +55,12 @@ public class BankService implements IBankService {
 
     @Override
     public void transfer(String senderUsername, String receiverUsername, double amount) {
+
+        if(senderUsername.equals(receiverUsername)){
+            System.out.println("Can't transfer to same account.");
+            return;
+        }
+
         User sender = userRepo.getUser(senderUsername);
         User receiver = userRepo.getUser(receiverUsername);
 
@@ -62,6 +68,7 @@ public class BankService implements IBankService {
             System.out.println("Sender or receiver does not exist.");
             return;
         }
+
 
         Account senderAcc = sender.getAccount();
         Account receiverAcc = receiver.getAccount();

@@ -1,13 +1,10 @@
 package models;
 
-public class Admin {
-    private final String adminUsername;
-    private final String adminPassword;
+public class Admin extends Person {
     private static Admin instance = null;
 
-    private Admin(String adminUsername, String adminPassword) {
-        this.adminUsername = adminUsername;
-        this.adminPassword = adminPassword;
+    private Admin(String userName, String password) {
+        super(userName, password);
     }
 
     public static Admin getInstance() {
@@ -16,7 +13,4 @@ public class Admin {
         }
         return instance;
     }
-
-    public String getAdminUsername() { return adminUsername; }
-    public String getAdminPassword() { return adminPassword; }
 }
