@@ -9,7 +9,7 @@ import java.util.UUID;
 
 public class Main {
     public static void main(String[] args) {
-        Admin admin = Admin.getInstance();1
+        Admin admin = Admin.getInstance();
         UserRepository userRepo = new UserRepository();
         AccountRepository accRepo = new AccountRepository();
         TransactionRepository txRepo = new TransactionRepository();
