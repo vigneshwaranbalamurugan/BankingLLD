@@ -71,13 +71,13 @@ public class BankService implements IBankService {
 
             txRepo.addTransaction(new Transaction(
                     senderAcc.getAccountNumber(),
-                    "Transferred to " + receiverAcc.getAccountNumber(),
+                    "Transferred to " + receiverUsername,
                     amount
             ));
 
             txRepo.addTransaction(new Transaction(
                     receiverAcc.getAccountNumber(),
-                    "Received from " + senderAcc.getAccountNumber(),
+                    "Received from " + senderUsername,
                     amount
             ));
 

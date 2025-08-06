@@ -9,7 +9,7 @@ import java.util.UUID;
 
 public class Main {
     public static void main(String[] args) {
-        Admin admin = new Admin("admin", "admin123");
+        Admin admin = Admin.getInstance();1
         UserRepository userRepo = new UserRepository();
         AccountRepository accRepo = new AccountRepository();
         TransactionRepository txRepo = new TransactionRepository();
@@ -48,17 +48,9 @@ public class Main {
                         String upass = sc.nextLine();
                         System.out.print("Full Name: ");
                         String fname = sc.nextLine();
-                        System.out.print("Phone: ");
-                        String phone = sc.nextLine();
-                        System.out.print("Aadhar: ");
-                        String aadhar = sc.nextLine();
-                        System.out.print("PAN: ");
-                        String pan = sc.nextLine();
-                        System.out.print("Address: ");
-                        String addr = sc.nextLine();
                         String accNum = UUID.randomUUID().toString();
                         Account acc = new Account(accNum, 0.0);
-                        User user = new User(uname, upass, fname, phone, aadhar, pan, addr, acc);
+                        User user = new User(uname, upass, fname, acc);
                         bankService.registerUser(user);
                         System.out.println("User registered successfully.");
                     } else {
